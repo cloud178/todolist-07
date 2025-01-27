@@ -9,6 +9,25 @@ const initialState: Todolist[] = [
     {id: todolistID2, title: 'What to buy', filter: 'all'},
 ]
 
-export const todolistsReducer = (state = initialState, action: any): Todolist[] => {
+type ActionsType = {
+    type: string
+    payload: any
+}
 
+export const todolistsReducer = (state = initialState, action: ActionsType): Todolist[] => {
+    switch (action.type) {
+        case 'REMOVE-TODOLIST': {
+            return [
+                ...state,
+            ]
+        }
+        case 'ADD-TODOLIST': {
+            return [
+                ...state,
+            ]
+        }
+        default: 
+            // throw new Error("I don't understand this type")
+            return state
+    }
 }
